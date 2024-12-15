@@ -1,4 +1,4 @@
-/* import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { loginData } from '../assets/mockdata';
@@ -15,7 +15,7 @@ const Login = () => {
     navigate('/profile');
   };
   return (
-    <Container className="mt-5">
+    <Container className="container-fluid bg-warning p-4">
       <h2>Iniciar Sesión</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
@@ -45,4 +45,3 @@ const Login = () => {
 };
 
 export default Login;
- */

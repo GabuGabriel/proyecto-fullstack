@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = ({ isAuthenticated }) => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
     <div className="container">
       <Link className="navbar-brand" to="/">
         <img src="/gglogo.svg" alt="Logo" width="40" />
@@ -12,19 +12,19 @@ const Navbar = ({ isAuthenticated }) => (
           {isAuthenticated ? (
             <>
               <li className="nav-item">
-                <Link className="nav-link" to="/profile">Mi Perfil</Link>
+                <Link className="nav-link text-light" to="/profile">Mi Perfil</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/cart">Carro</Link>
+                <Link className="nav-link text-light" to="/cart">Carro</Link>
               </li>
             </>
           ) : (
             <>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">Iniciar Sesión</Link>
+                <Link className="nav-link text-light" to="/login">Iniciar Sesión</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/register">Registrarse</Link>
+                <Link className="nav-link text-light" to="/register">Registrarse</Link>
               </li>
             </>
           )}

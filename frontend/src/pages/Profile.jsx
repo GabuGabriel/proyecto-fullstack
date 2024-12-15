@@ -1,4 +1,4 @@
-/* import React from 'react';
+import React from 'react';
 import { Container, Card, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { profileData } from '../assets/mockdata';
@@ -6,7 +6,7 @@ import { profileData } from '../assets/mockdata';
 const Profile = () => {
   const navigate = useNavigate();
   return (
-    <Container className="mt-5">
+    <Container className="container-fluid bg-warning p-4">
       <Card>
         <Card.Header>Mi Perfil</Card.Header>
         <Card.Body>
@@ -35,4 +35,3 @@ const Profile = () => {
 };
 
 export default Profile;
- */

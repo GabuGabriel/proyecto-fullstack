@@ -1,4 +1,4 @@
-/* import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { registrationData } from '../assets/mockdata';
@@ -38,7 +38,7 @@ const Register = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="container-fluid bg-warning p-4">
       <h2>Registro de Usuario</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
@@ -95,4 +95,3 @@ const Register = () => {
 };
 
 export default Register;
- */
