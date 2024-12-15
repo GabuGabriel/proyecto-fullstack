@@ -1,20 +1,12 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-
-dotenv.config();
+// backend/server.js
+import express from 'express';
+import cors from 'cors';
+import authRoutes from './routes/authRoutes.js';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'));
 
-// Importar rutas
-const routes = require('./routes');
-app.use('/api', routes);
+app.use('/api/auth', authRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+app.listen(3000, () => console.log('Servidor corriendo en http://localhost:3000'));

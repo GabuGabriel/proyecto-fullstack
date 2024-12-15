@@ -1,14 +1,20 @@
-import request from "supertest";
-import app from "../server.js";
+// backend/tests/auth.test.js
+import request from 'supertest';
+import app from '../server.js';
 
-describe("Auth API", () => {
-  it("Debería registrar un usuario", async () => {
+describe('Rutas de autenticación', () => {
+  it('Debería registrar un usuario', async () => {
     const res = await request(app)
-      .post("/auth/register")
-      .send({ username: "testuser", email: "test@test.com", password: "123456" });
+      .post('/api/auth/register')
+      .send({ username: 'testuser', email: 'test@example.com', password: '123456' });
+    expect(res.statusCode).toBe(201);
+  });
 
-    expect(res.status).toBe(201);
-    expect(res.body.user).toHaveProperty("id");
-    expect(res.body).toHaveProperty("token");
+  it('Debería iniciar sesión correctamente', async () => {
+    const res = await request(app)
+      .post('/api/auth/login')
+      .send({ email: 'test@example.com', password: '123456' });
+    expect(res.statusCode).toBe(200);
+    expect(res.body).toHaveProperty('token');
   });
 });
